@@ -1,7 +1,5 @@
 # laugmanuel/docker-grav
 
----
-
 <Docker Hub Badge>
 
 # What is this repository?
