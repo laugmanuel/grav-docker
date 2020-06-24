@@ -15,6 +15,14 @@ This image also allows for a dynamic installation during startup.
 - PHP7 + FPM
 - GRAV core
 
+# Example
+```sh
+docker run -p 8080:8080 \
+  -v $(pwd)/grav-plugins.txt:/grav-plugins.txt:ro \
+  -v $(pwd)/data:/usr/share/nginx/html \
+  -it laugmanuel/grav:latest
+```
+
 # Variables
 
 There are some environment variables which can be used to influence the behaviour:
