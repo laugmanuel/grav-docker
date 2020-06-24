@@ -1,8 +1,7 @@
 FROM alpine:latest
 
 LABEL maintainer="Manuel Laug <laugmanuel@gmail.com>"
-LABEL name="grav-docker"
-LABEL version="0.0.1"
+LABEL name="laugmanuel/grav"
 
 RUN addgroup -g 555 -S nginx \
     && adduser -SD -u 555 -h /usr/share/nginx -s /sbin/nologin -G nginx -g nginx nginx \
