@@ -19,7 +19,9 @@ This image also allows for a dynamic installation during startup.
 ```sh
 docker run -p 8080:8080 \
   -v $(pwd)/grav-plugins.txt:/grav-plugins.txt:ro \
-  -v $(pwd)/data:/usr/share/nginx/html \
+  -v $(pwd)/data/user:/usr/share/nginx/html/user \
+  -v $(pwd)/data/backup:/usr/share/nginx/html/backup \
+  -v $(pwd)/data/logs:/usr/share/nginx/html/logs \
   -it laugmanuel/grav:latest
 ```
 
