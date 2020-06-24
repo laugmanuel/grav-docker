@@ -1,7 +1,8 @@
 # laugmanuel/docker-grav
-![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/grav?style=flat-square&logo=appveyor)
-![badge2](https://img.shields.io/docker/cloud/automated/laugmanuel/grav?style=flat-square&logo=appveyor)
-![badge3](https://img.shields.io/docker/pulls/laugmanuel/grav?style=flat-square&logo=appveyor)
+
+[![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/grav?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
+[![badge2](https://img.shields.io/docker/cloud/automated/laugmanuel/grav?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
+[![badge3](https://img.shields.io/docker/pulls/laugmanuel/grav?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
 
 # What is this repository?
 
@@ -19,6 +20,7 @@ The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-co
 - GRAV core
 
 # Example
+
 ```sh
 docker run -p 8080:8080 \
   -v $(pwd)/grav-plugins.txt:/grav-plugins.txt:ro \
