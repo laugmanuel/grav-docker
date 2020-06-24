@@ -1,8 +1,6 @@
 # laugmanuel/docker-grav
 ![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/grav?style=flat-square&logo=appveyor)
-
 ![badge2](https://img.shields.io/docker/cloud/automated/laugmanuel/grav?style=flat-square&logo=appveyor)
-
 ![badge3](https://img.shields.io/docker/pulls/laugmanuel/grav?style=flat-square&logo=appveyor)
 
 # What is this repository?
