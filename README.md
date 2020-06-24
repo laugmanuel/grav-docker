@@ -1,12 +1,17 @@
 # laugmanuel/docker-grav
+![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/grav?style=flat-square&logo=appveyor)
 
-<Docker Hub Badge>
+![badge2](https://img.shields.io/docker/cloud/automated/laugmanuel/grav?style=flat-square&logo=appveyor)
+
+![badge3](https://img.shields.io/docker/pulls/laugmanuel/grav?style=flat-square&logo=appveyor)
 
 # What is this repository?
 
 This repository serves as a base for the `laugmanuel/grav` Docker image: https://github.com/laugmanuel/grav-docker
 
 This image also allows for a dynamic installation during startup.
+
+The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-configs-nginx) and some modified settings based on [GRAV Nginx hosting](https://learn.getgrav.org/16/webservers-hosting/servers/nginx).
 
 # Information
 
