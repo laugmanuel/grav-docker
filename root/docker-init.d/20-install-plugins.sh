@@ -1,25 +1,32 @@
 #!/bin/sh
 
+function yaml2json {
+  ruby -rjson -ryaml -e 'puts YAML::load(STDIN.read).to_json'
+}
+
 echo "[+] Installing grav plugins ..."
 
-if [ -f ${PLUGIN_FILE} ]; then
-  PLUGINS=$(cat ${PLUGIN_FILE} | xargs)
-  PLUGINS_INSTALLED=true
+if [ -f ${PACKAGES_FILE} ]; then
+  PLUGINS=$(cat ${PACKAGES_FILE} | yaml2json | jq -r '.plugins | .[]' 2>/dev/null)
+  THEMES=$(cat ${PACKAGES_FILE} | yaml2json | jq -r '.themes | .[]' 2>/dev/null)
 
-  # Check if there are plugins missing
+  # Check all plugins
   for p in $PLUGINS; do
-    if [ ! -d "${TARGET_PATH}/user/plugins/${p}" ]; then
-      PLUGINS_INSTALLED=false
+    if [ ! -d "${TARGET_PATH}/user/plugins/${p}" ] || [ "${FORCE_PLUGIN_INSTALL}" == "true" ]; then
+      echo "  - Installing plugin: ${p}"
+      ./bin/gpm install -qnyf ${p}
+    else
+      echo "  - Skipping plugin: ${p} - already present ..."
     fi
   done
 
-  # If plugins are missing or install is forced we do so
-  if [ "${PLUGINS_INSTALLED}" == "false" ] || [ "${FORCE_PLUGIN_INSTALL}" == "true" ]; then
-    (
-      cd ${TARGET_PATH}
-      ./bin/gpm install -f -y ${PLUGINS}
-    )
-  else
-    echo "  - Skipping Plugin installation. They are already present..."
-  fi
+  # Check all themes
+  for t in $THEMES; do
+    if [ ! -d "${TARGET_PATH}/user/themes/${t}" ] ||  [ "${FORCE_THEME_INSTALL}" == "true" ]; then
+      echo "  - Installing theme: ${t}"
+      ./bin/gpm install -qnyf ${t}
+    else
+      echo "  - Skipping theme: ${t} - already present ..."
+    fi
+  done
 fi

@@ -1,14 +1,16 @@
 #!/bin/sh
 
 export FORCE_PLUGIN_INSTALL=${FORCE_PLUGIN_INSTALL:-false}
-export PLUGIN_FILE=${PLUGIN_FILE:-/grav-plugins.txt}
+export FORCE_THEME_INSTALL=${FORCE_THEME_INSTALL:-false}
+export PACKAGES_FILE=${PACKAGES_FILE:-/grav-packages.yaml}
 
 export SOURCE_PATH="/grav/grav/"
 export TARGET_PATH="/usr/share/nginx/html/"
 
 echo "[+] docker-init.sh for grav setup"
 echo "  - FORCE_PLUGIN_INSTALL: ${FORCE_PLUGIN_INSTALL}"
-echo "  - PLUGIN_FILE: ${PLUGIN_FILE}"
+echo "  - FORCE_THEME_INSTALL: ${FORCE_THEME_INSTALL}"
+echo "  - PACKAGES_FILE: ${PACKAGES_FILE}"
 echo "  - Webroot: ${TARGET_PATH}"
 echo "  - Package source: ${SOURCE_PATH}"
 

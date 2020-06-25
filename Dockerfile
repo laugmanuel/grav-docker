@@ -6,6 +6,8 @@ LABEL name="laugmanuel/grav"
 RUN addgroup -g 555 -S nginx \
     && adduser -SD -u 555 -h /usr/share/nginx -s /sbin/nologin -G nginx -g nginx nginx \
     && apk --no-cache add curl \
+         ruby \
+         ruby-json \
          jq \
          nginx \
          php7 \
