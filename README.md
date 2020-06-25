@@ -23,7 +23,7 @@ The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-co
 
 ```sh
 docker run -p 8080:8080 \
-  -v $(pwd)/grav-plugins.txt:/grav-plugins.txt:ro \
+  -v $(pwd)/grav-packages.yaml:/grav-packages.yaml:ro \
   -v $(pwd)/data/user:/usr/share/nginx/html/user \
   -v $(pwd)/data/backup:/usr/share/nginx/html/backup \
   -v $(pwd)/data/logs:/usr/share/nginx/html/logs \
@@ -40,17 +40,26 @@ There are some environment variables which can be used to influence the behaviou
 
 Used to force the installation of all plugins. This also causes updates of the plugins.
 
-### `PLUGIN_FILE`
+### `FORCE_THEME_INSTALL`
 
-**Values:** \<path to plugins file\> (**Default:** `/grav-plugins.txt`)
+**Values:** `true` or `false` (**Default:** `false`)
 
-This file contains all plugins line by line.
-The plugins will be installed during startup (if not already present).
+Used to force the installation of all themes. This also causes updates of the themes.
+
+### `PACKAGES_FILE`
+
+**Values:** \<path to packages file\> (**Default:** `/grav-packages.yaml`)
+
+This file contains all plugins and themes in YAML syntax..
+The plugins/themes will be installed during startup (if not already present).
 
 **Example:**
 
 ```txt
-admin
-simplesearch
-youtube
+themes:
+  - future
+plugins:
+  - admin
+  - simplesearch
+  - youtube
 ```
