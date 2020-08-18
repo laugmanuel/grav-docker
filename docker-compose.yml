@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  grav:
+    image: laugmanuel/grav:latest
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - FORCE_PLUGIN_INSTALL=true
+      - FORCE_THEME_INSTALL=true
+    volumes:
+      - ./grav-packages.yaml:/grav-packages.yaml:ro
+      - ./data/user:/usr/share/nginx/html/user
+      - ./data/backup:/usr/share/nginx/html/backup
+      - ./data/logs:/usr/share/nginx/html/logs
