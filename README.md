@@ -1,7 +1,7 @@
 # laugmanuel/docker-grav
 
-[![badge1](https://img.shields.io/docker/cloud/build/laugmanuel/grav?style=flat-square&logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
-[![badge2](https://github.com/laugmanuel/bludit-docker/workflows/ci/badge.svg)](https://hub.docker.com/r/laugmanuel/grav)
+[![badge1](https://img.shields.io/docker/pulls/laugmanuel/grav?logo=appveyor)](https://hub.docker.com/r/laugmanuel/grav)
+[![badge2](https://github.com/laugmanuel/grav-docker/workflows/ci/badge.svg)](https://hub.docker.com/r/laugmanuel/grav)
 
 # What is this repository?
 
