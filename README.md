@@ -11,6 +11,8 @@ This image also allows for a dynamic installation during startup.
 
 The image uses a sane nginx config from [h5bp](https://github.com/h5bp/server-configs-nginx) and some modified settings based on [GRAV Nginx hosting](https://learn.getgrav.org/16/webservers-hosting/servers/nginx).
 
+It provides a *automated weekly build* to keep up with the upstream alpine image!
+
 # Information
 
 - `FROM: alpine:stable`

@@ -31,7 +31,8 @@ RUN addgroup -g 555 -S nginx \
 
 RUN GRAV_VERSION=$(curl -sq https://api.github.com/repos/getgrav/grav/releases/latest | jq -r '.tag_name') \
     && curl -L --output /grav/grav-v${GRAV_VERSION}.zip https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-v${GRAV_VERSION}.zip \
-    && unzip -d /grav /grav/grav-v${GRAV_VERSION}.zip
+    && unzip -d /grav /grav/grav-v${GRAV_VERSION}.zip \
+    && rm -rf /etc/nginx/conf.d/*
 
 COPY root/ /
 
