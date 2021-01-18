@@ -26,13 +26,12 @@ RUN addgroup -g 555 -S nginx \
          php7-xml \
          php7-zip \
     && mkdir -p /grav /usr/share/nginx/html \
-    && chown nginx:nginx /grav /usr/share/nginx/html \
-    && rm /etc/nginx/conf.d/default.conf /etc/php7/php-fpm.d/www.conf
+    && chown nginx:nginx /grav /usr/share/nginx/html
 
 RUN GRAV_VERSION=$(curl -sq https://api.github.com/repos/getgrav/grav/releases/latest | jq -r '.tag_name') \
     && curl -L --output /grav/grav-v${GRAV_VERSION}.zip https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-v${GRAV_VERSION}.zip \
     && unzip -d /grav /grav/grav-v${GRAV_VERSION}.zip \
-    && rm -rf /etc/nginx/conf.d/*
+    && rm -rf /etc/nginx/conf.d && mkdir /etc/nginx/conf.d
 
 COPY root/ /
 
